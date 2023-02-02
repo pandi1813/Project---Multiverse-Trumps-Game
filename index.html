@@ -10,20 +10,20 @@
 </head>
 <body>
     
-    <section id="start-screen">
-        <div class="jumbotron">
-            <h1 class="display-4">Heroes & Villains Epic Faceoff</h1>
+    <section class="show" id="start-section">
+        <!-- <div class="jumbotron"> -->
+            <h1 class="display-4 show">Heroes & Villains Epic Faceoff</h1>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <button type="button" class="btn btn-warning">Play!</button>
-            <button type="button" class="btn btn-primary">Rules</button>
-          </div>
+            <button type="button" id="play-btn" class="btn btn-warning">Play!</button>
+            <button type="button" id="rule-btn" class="btn btn-primary">Rules</button>
+          <!-- </div> -->
     </section>
+    <section id="rules-section" class="hide" ></section>
+    <section id="game-section" class="hide"></section>
 
-    <section id="game"></section>
-
-    <section id="end-screen"></section>
+    <section id="end-section" class="hide"></section>
 
 
     <script src="./script.js"></script>

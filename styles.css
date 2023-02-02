@@ -1,0 +1,19 @@
+
+.hide {
+    display: none;
+}
+
+.show {
+    height: 100%;
+    width: 100%;
+}
+
+
+#start-section {
+    background-color: orange;
+
+}
+
+#game-section {
+    background-color: red;
+}
