@@ -1,0 +1,13 @@
+.container{
+    background-image: url(./assets/11111111.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 900px;
+    height: 900px;
+}
+
+.resultGif img{
+    /* height: 100px;
+    width: 100px; */
+    
+}
