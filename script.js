@@ -4,8 +4,8 @@ fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
     .then(heroData => {
 
         // get a random superhero's data (for display on the card)
-        function getHeroData(heroData) {
-            
+        function getRandomHeroData(heroData) {
+
             // select a random superhero from the data
             let randomHeroIndex = Math.floor(Math.random() * heroData.length);
             let randomHero = heroData[randomHeroIndex];
@@ -35,14 +35,10 @@ fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
                 combatStat,
             };
         }
-        
-        let selectedHero = getHeroData(heroData);
-        console.log(selectedHero);
 
+        // put superhero attributes into player's card
+        let playerHero = getRandomHeroData(heroData);
 
-
-        // put data into card
-
-        // do above again for computer card     
-
+        // put superhero attributes into computer's card     
+        let computerHero = getRandomHeroData(heroData);
     });
