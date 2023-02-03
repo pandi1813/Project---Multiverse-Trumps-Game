@@ -16,7 +16,7 @@ function winOrLose() {
         gameResult = gameResultLose[0]
     }
     else {
-        gameResult = gameResultTie[2]
+        gameResult = gameResultTie[1]
     }
 
     getGif(gameResult)
@@ -32,6 +32,8 @@ function getGif(gifWord) {
             gifEl.src = selectedGif;
         })
 }
+
+// try this   --->  https://api.gfycat.com/v1/reactions/populated?tagName=
 
 
 
