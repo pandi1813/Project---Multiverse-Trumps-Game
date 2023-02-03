@@ -1,11 +1,10 @@
-
+/* hidden sections */
 .hide {
     display: none;
 }
 
 
-
-
+/* start screen styling */
 #start-section {
     background-color: orange;
     height: 100vh;
@@ -38,6 +37,8 @@ right: 5px;
 }
 
 
+
+/* game screen styling */
 #game-section {
     background-color: blue;
     height: 100vh;
