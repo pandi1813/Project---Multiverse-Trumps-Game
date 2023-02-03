@@ -1,45 +1,98 @@
-let gameResultLose = ["youlose", "looser", "sad", "tryme"]
-let gameResultWin = ["winning", "victory", "cheers"]
-let gameResultTie = [, "muhaha", "ha", "haha", "goodluck", "really"]
-let gameResult = ""
+
+
+// *********************** VARIABLES ***********************************
+
+// variables for buttons
+let rulesBtn = document.querySelector("#rule-btn");
+let startBtn = document.querySelector("#play-btn");
+let returnBtn = document.querySelector("#return-btn");
+
+// variables for screen containers
+let startScreen = document.querySelector("#start-section");
+let gameScreen = document.querySelector("#game-section");
+let rulesScreen = document.querySelector("#rules-section");
+
+
+
+
+//************************* EVENT LISTENERS ***************************
+
+// start screen --> game screen
+startBtn.addEventListener("click", function () {
+    startScreen.classList.add("hide");
+    gameScreen.classList.remove("hide");
+})
+
+
+// start screen --> ruses screen
+rulesBtn.addEventListener("click", function () {
+    startScreen.classList.add("hide");
+    rulesScreen.classList.remove("hide");
+})
+
+// rules screen --> start screen
+returnBtn.addEventListener("click", function () {
+    rulesScreen.classList.add("hide");
+    startScreen.classList.remove("hide");
+})
+
+
+//************************* Gif generator ***************************
+
+// Declare arrays to store different game results and messages
+let gameResultLose = ["youlose", "looser", "sad", "tryme"];
+let gameResultWin = ["winning", "victory", "cheers"];
+let gameResultTie = [, "muhaha", "ha", "haha", "goodluck", "really"];
+let gameResult = "";
 
 let text = "";
 let score = "win";
 winOrLose();
 
-
+// Function to determine the result of the game based on the score variable
 function winOrLose() {
     if (score === "win") {
+        // Randomly select a message from the gameResultWin array
         const randomWin = Math.floor(Math.random() * gameResultWin.length);
         gameResult = gameResultWin[randomWin];
         text = "Congratulations You Won !";
     } else if (score === "lose") {
+        // Randomly select a message from the gameResultLose array
         const randomLose = Math.floor(Math.random() * gameResultLose.length);
         gameResult = gameResultLose[randomLose];
         text = "Sorry, You Lost !";
     } else {
+        // Randomly select a message from the gameResultTie array
         const randomTie = Math.floor(Math.random() * gameResultTie.length);
         gameResult = gameResultTie[randomTie];
         text = "It's a Tie !";
     }
 
+    // Create an h1 element with the result text
     let textEl = document.createElement("h1");
     textEl.textContent = text;
+    // Append the h1 element to the resultText element in the HTML
     document.querySelector("#resultText").appendChild(textEl);
 
+    // Call the getGif function with the gameResult variable as an argument
     getGif(gameResult);
 }
 
+// Function to retrieve a GIF from the gfycat API based on the gifWord argument
 function getGif(gifWord) {
-
     fetch(`https://api.gfycat.com/v1/gfycats/search?search_text=${gifWord}`)
         .then(response => response.json())
         .then(data => {
+            // Select the 3rd GIF from the API response
             let selectedGif = data.gfycats[2].max2mbGif;
+            // Set the src attribute of the gif element to the selected GIF
             let gifEl = document.querySelector("#gif");
             gifEl.src = selectedGif;
-        })
+        });
 }
+
+
+//************************* Hero stats for cards ***************************
 
 
 // Codes to pull superheroes' data from API
