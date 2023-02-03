@@ -1,3 +1,50 @@
+
+/* hidden sections */
+.hide {
+    display: none;
+}
+
+
+/* start screen styling */
+#start-section {
+    background-color: orange;
+    height: 100vh;
+}
+
+#start-section h1 {
+    text-align: center;
+    padding: 8vh 0 20vh;
+}
+
+#start-section p {
+    margin: 0 5vw;
+}
+
+#play-btn {
+    display: block;
+    margin: 10vh auto;
+    background-color: red;
+    border-radius: 50%;
+    height: 120px;
+    width: 150px;
+    font-size: 40px;
+}
+
+#rule-btn {
+background-color: black;
+position: fixed;
+bottom: 5px;
+right: 5px;
+}
+
+
+
+/* game screen styling */
+#game-section {
+    background-color: blue;
+    height: 100vh;
+}
+
 .resultGif {
     height: auto;
     width: 300px;
