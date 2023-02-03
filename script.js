@@ -1,6 +1,6 @@
 let gameResultLose = ["youlose", "looser", "sad", "tryme"]
 let gameResultWin = ["winning", "victory", "cheers", "youwin", "cry"]
-let gameResultTie = ["look", "really", "oh"]
+let gameResultTie = [,"muhaha","ha", "haha","goodluck", "really"]
 let gameResult = ""
 
 
@@ -10,13 +10,16 @@ winOrLose()
 
 function winOrLose() {
     if (score == "win") {
-        gameResult = gameResultWin[0]
+        const randomWin = Math.floor(Math.random() * gameResultWin.length)
+        gameResult = gameResultWin[randomWin]
     }
     else if (score == "lose") {
-        gameResult = gameResultLose[0]
+        const randomLose = Math.floor(Math.random() * gameResultLose.length)
+        gameResult = gameResultLose[randomWin]
     }
     else {
-        gameResult = gameResultTie[1]
+        const randomTie = Math.floor(Math.random() * gameResultTie.length)
+        gameResult = gameResultTie[randomTie]
     }
 
     getGif(gameResult)
