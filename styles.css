@@ -50,7 +50,21 @@ right: 5px;
     width: 300px;
 }
 
-.card-body{
+.card-img-top{
     height: auto;
-    width: 300px;
+    width: 320px;
+}
+
+.container{
+    height: auto;
+    width: 400px; 
+}
+
+button{
+    display: block;
+}
+
+p{
+    display: inline-block;
+    vertical-align:baseline;
 }
