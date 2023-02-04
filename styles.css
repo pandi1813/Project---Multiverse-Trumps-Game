@@ -56,7 +56,7 @@ p {
 
 .card-img-top {
     object-fit: fill;
-    border-radius: 15% 15% 0% 0%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 }
 
 .card {
@@ -69,10 +69,10 @@ p {
     box-sizing: border-box;
     margin: 20px;
     outline-width: 10px;
-    outline-offset: 10px;
+    outline-style: outset;
     outline-color: black;
-    border-radius: 15% 15% 0% 0%;
-}
+    overflow: hidden;
+} 
 
 .card-deck {
     width: auto;
