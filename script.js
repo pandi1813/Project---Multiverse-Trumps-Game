@@ -94,7 +94,6 @@ function getGif(gifWord) {
 
 //************************* Hero stats for cards ***************************
 
-
 // Codes to pull superheroes' data from API
 fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
     .then(response => response.json())
@@ -120,7 +119,7 @@ fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
             let durabilityStat = randomHero.powerstats.durability;
             let powerStat = randomHero.powerstats.power;
             let combatStat = randomHero.powerstats.combat;
-
+            
             return {
                 heroName,
                 imageURL,
@@ -138,4 +137,33 @@ fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
 
         // put superhero attributes into computer's card     
         let computerHero = getRandomHeroData(heroData);
+  displayCards(playerHero, computerHero)
     });
+
+
+//*************************Card details displayed *************************** */
+
+function displayCards(playerHero, computerHero){
+
+    document.getElementById('playerImg').src = playerHero.imageURL;
+    document.getElementById('playerName').innerHTML = playerHero.heroName;
+    document.getElementById('intelligenceValue').innerHTML = playerHero.intelligenceStat;
+    document.getElementById('strengthValue').innerHTML = playerHero.strengthStat;
+    document.getElementById('speedValue').innerHTML = playerHero.speedStat;
+    document.getElementById('durabilityValue').innerHTML = playerHero.durabilityStat;
+    document.getElementById('powerValue').innerHTML = playerHero.powerStat;
+    document.getElementById('combatValue').innerHTML = playerHero.combatStat;
+
+
+    document.getElementById('pcImg').src = computerHero.imageURL;
+    document.getElementById('pcName').innerHTML = computerHero.heroName;
+    document.getElementById('pcIntelligenceValue').innerHTML = computerHero.intelligenceStat;
+    document.getElementById('pcStrengthValue').innerHTML = computerHero.strengthStat;
+    document.getElementById('pcSpeedValue').innerHTML = computerHero.speedStat;
+    document.getElementById('pcDurabilityValue').innerHTML = computerHero.durabilityStat;
+    document.getElementById('pcPowerValue').innerHTML = computerHero.powerStat;
+    document.getElementById('pcCombatValue').innerHTML = computerHero.combatStat;
+
+
+
+}
