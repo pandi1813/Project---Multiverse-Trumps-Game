@@ -34,14 +34,15 @@
             reiciendis accusamus?</p>
         <button id="return-btn">Return</button>
     </section>
-    <game id="game-section" class="hide row">
+    <game id="game-section" class="hide row flex">
         <!-- player card -->
         <div class="container col-2">
             <div class="card-deck">
                 <div class="card align-items-center">
                     <img src="" class="card-img-top " id="playerImg">
                     <div class="card-body">
-                        <h2 id="playerName">Players Card</h2>
+                        <a>Your cards</a>
+                        <h2 id="playerName"></h2>
                         <button class="card-title int">Intelligence <p class="card-text" id="intelligenceValue"></p>
                         </button>
                         <button class="card-title str">Strength <p class="card-text" id="strengthValue"></p>
@@ -64,6 +65,7 @@
                 <div class="card align-items-center">
                     <img src="" class="card-img-top" id="pcImg">
                     <div class="card-body">
+                        <a>Opponents cards</a>
                         <h2 id="pcName"></h2>
                         <h5 class="card-title">Intelligence <p class="card-text" id="pcIntelligenceValue"></p>
                         </h5>

@@ -56,18 +56,22 @@ p {
 
 .card-img-top {
     object-fit: fill;
-
+    border-radius: 15% 15% 0% 0%;
 }
 
 .card {
     object-fit: fill;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     margin: 20px;
+    outline-width: 10px;
+    outline-offset: 10px;
+    outline-color: black;
+    border-radius: 15% 15% 0% 0%;
 }
 
 .card-deck {
@@ -90,7 +94,7 @@ p {
 }
 
 .card-body {
-    background-color: black;
+ 
     box-sizing: border-box;
 
 }
@@ -103,7 +107,6 @@ p {
     width: 100%;
     -webkit-transition: all 0.3s ease-in-out;
     border: 0px;
-    border-radius: 10%;
     line-height: 1em;
     font-weight: bold;
 
@@ -162,4 +165,8 @@ p {
     outline-color: green;
     outline-width: 5px;
     outline-style: outset;
+}
+
+.card-cody a{
+    color: aliceblue;
 }
