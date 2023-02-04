@@ -67,12 +67,16 @@ p {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    margin: 20px;
+    margin: 30px;
     outline-width: 10px;
     outline-style: outset;
     outline-color: black;
     overflow: hidden;
+    transition: transform 0.3s ease-out;
 } 
+.card:hover {
+    transform: translateY(-15px);
+  }
 
 .card-deck {
     width: auto;
