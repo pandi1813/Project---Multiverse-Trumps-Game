@@ -1,4 +1,3 @@
-
 /* hidden sections */
 .hide {
     display: none;
@@ -31,18 +30,23 @@
 }
 
 #rule-btn {
-background-color: black;
-position: fixed;
-bottom: 5px;
-right: 5px;
+    background-color: black;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
 }
 
 
 
 /* game screen styling */
-#game-section {
-    background-color: blue;
+game {
+
     height: 100vh;
+}
+
+p {
+    display: inline;
+    justify-content: center;
 }
 
 .resultGif {
@@ -50,21 +54,112 @@ right: 5px;
     width: 300px;
 }
 
-.card-img-top{
-    height: auto;
-    width: 320px;
+.card-img-top {
+    object-fit: fill;
+
 }
 
-.container{
-    height: auto;
-    width: 400px; 
+.card {
+    object-fit: fill;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 20px;
 }
 
-button{
-    display: block;
+.card-deck {
+    width: auto;
+    height: 500px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    min-height: fit-content;
+
+
 }
 
-p{
+.container {
+    text-align: center;
+    color: #da1111;
+    box-sizing: border-box;
+    width: 300px;
+    height: 500px;
+}
+
+.card-body {
+    background-color: black;
+    box-sizing: border-box;
+
+}
+
+.card-body button {
     display: inline-block;
-    vertical-align:baseline;
+    height: 20px;
+    vertical-align: middle;
+    justify-content: center;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    border: 0px;
+    border-radius: 10%;
+    line-height: 1em;
+    font-weight: bold;
+
+}
+
+.int:hover,
+.str:hover,
+.spd:hover,
+.dur:hover,
+.pow:hover,
+.com:hover {
+    -webkit-transform: scale(1.5);
+    background: rgb(0, 0, 0);
+    color: white;
+}
+
+
+
+.int {
+    background-color: yellow;
+    outline-color: yellow;
+    outline-width: 5px;
+    outline-style: outset;
+}
+
+.str {
+    background-color: red;
+    outline-color: red;
+    outline-width: 5px;
+    outline-style: outset;
+}
+
+.spd {
+    background-color: blue;
+    outline-color: blue;
+    outline-width: 5px;
+    outline-style: outset;
+}
+
+.dur {
+    background-color: orange;
+    outline-color: orange;
+    outline-width: 5px;
+    outline-style: outset;
+}
+
+.pow {
+    background-color: purple;
+    outline-color: purple;
+    outline-width: 5px;
+    outline-style: outset;
+}
+
+.com {
+    background-color: green;
+    outline-color: green;
+    outline-width: 5px;
+    outline-style: outset;
 }
