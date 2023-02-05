@@ -119,7 +119,7 @@ fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
             let durabilityStat = randomHero.powerstats.durability;
             let powerStat = randomHero.powerstats.power;
             let combatStat = randomHero.powerstats.combat;
-            
+
             return {
                 heroName,
                 imageURL,
@@ -137,13 +137,13 @@ fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
 
         // put superhero attributes into computer's card     
         let computerHero = getRandomHeroData(heroData);
-  displayCards(playerHero, computerHero)
+        displayCards(playerHero, computerHero)
     });
 
 
 //*************************Card details displayed *************************** */
 
-function displayCards(playerHero, computerHero){
+function displayCards(playerHero, computerHero) {
 
     document.getElementById('playerImg').src = playerHero.imageURL;
     document.getElementById('playerName').innerHTML = playerHero.heroName;

@@ -1,3 +1,11 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+
 /* hidden sections */
 .hide {
     display: none;
@@ -6,17 +14,31 @@
 
 /* start screen styling */
 #start-section {
-    background-color: orange;
-    height: 100vh;
+    background-image: url(./assets/222.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 180%;
+    width: 70%;
+    outline-style: groove;
+    outline-width: 15px;
 }
 
 #start-section h1 {
     text-align: center;
     padding: 8vh 0 20vh;
+    color: aqua;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+
+
+
 #start-section p {
+    text-align: center;
     margin: 0 5vw;
+    color: aqua;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #play-btn {
@@ -36,11 +58,7 @@
     right: 5px;
 }
 
-body{
-    justify-content: center;
-    align-items: center;
-    margin: 50px;
-}
+
 
 
 /* game screen styling */
@@ -67,7 +85,7 @@ p {
 
 .card-img-top {
     object-fit: fill;
-    width: 60%;
+    width: 80%;
     height: auto;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
     margin: 0;
@@ -86,13 +104,14 @@ p {
     margin: 30px;
     outline-width: 10px;
     outline-style: outset;
-    outline-color: black;
+    outline-color: #ffd900b6;
     overflow: hidden;
     transition: transform 0.3s ease-out;
-} 
+}
+
 .card:hover {
     transform: translateY(-15px);
-  }
+}
 
 .card-deck {
     width: 250px;
@@ -115,10 +134,8 @@ p {
 
 .card-body {
     box-sizing: border-box;
-    height: 150px;
     width: 90%;
     padding: 0;
-
 }
 
 .card-body button {
@@ -192,7 +209,7 @@ p {
 }
 
 .card-body a {
-    color:  aliceblue;
+    color: aliceblue;
     font-size: 60%;
     margin: 0;
 }
