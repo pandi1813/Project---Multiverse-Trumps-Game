@@ -63,14 +63,41 @@ body {
 
 /* game screen styling */
 game {
-    /* background: url(./assets/11111111.jpg);
+    background: url(./assets/22033.jpg);
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+    outline-style: groove;
+    outline-width: 15px;
     height: 100vh;
     width: 170vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    object-fit: fill;
+
+}
+
+.card {
+    /* width: 80px; */
+    height: 380px;
+    object-fit: fill;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 30px;
+    outline-width: 10px;
+    outline-style: outset;
+    outline-color: #ffd900b6;
+    overflow: hidden;
+    transition: transform 0.3s ease-out;
+    position: relative;
+    bottom: -70%
 }
 
 p {
@@ -85,29 +112,37 @@ p {
 
 .card-img-top {
     object-fit: fill;
-    width: 80%;
-    height: auto;
+    width: auto;
+    height: 53%;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
     margin: 0;
+    position: absolute;
+    left: 0%;
+    top: 0%;
 }
 
-.card {
-    width: auto;
-    height: 500px;
-    object-fit: fill;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    margin: 30px;
-    outline-width: 10px;
-    outline-style: outset;
-    outline-color: #ffd900b6;
-    overflow: hidden;
-    transition: transform 0.3s ease-out;
+.card-body a {
+    position: absolute;
+    /* transform: translate(-50%, -50%); */
+    z-index: 1;
+    color: white;
+    text-align: center;
+    right: 5%;
+    top: -100%;
+    font-size: 10px;
+
 }
+
+.card-body h2 {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    right: 5%;
+    top: -20%;
+
+}
+
 
 .card:hover {
     transform: translateY(-15px);
@@ -126,16 +161,30 @@ p {
 
 .container {
     text-align: center;
-    color: #da1111;
     box-sizing: border-box;
     width: 300px;
     height: 500px;
+    text-shadow: 0.5px 0.5px 0 #ffffff, 0.5px 0.5px 0 #ffffff, 0.5px 0.5px 0 #ffffff, 0.5px 0.5px 0 #ffffff;
+    font-style: oblique;
+}
+
+.playerCon {
+    position: absolute;
+    left: 30%;
+}
+
+.pcCon {
+    position: absolute;
+    right: 30%;
 }
 
 .card-body {
     box-sizing: border-box;
-    width: 90%;
+    width: auto;
+    height: 50%;
     padding: 0;
+    position: absolute;
+    bottom: -5%;
 }
 
 .card-body button {
@@ -151,6 +200,10 @@ p {
     font-size: smaller;
     font-weight: bold;
 
+}
+
+.card-body button p {
+    text-align: right;
 }
 
 .int:hover,
