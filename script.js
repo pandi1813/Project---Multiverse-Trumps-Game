@@ -175,6 +175,8 @@ playerCard.addEventListener("click", function () {
         console.log(selectedStat.querySelector(".card-text").innerHTML)
         computerCard.classList.remove("hide")
 
+        console.log(selectedStat.classList[1])
+
 
     }
 })
