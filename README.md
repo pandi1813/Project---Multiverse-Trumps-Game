@@ -18,13 +18,43 @@
                 // hook into the same stat as the player
                
 // compare stat of the 2 cards
+
+
+    //hide computer card  
+
+    add event listener to power buttons
+     
+
+     identify the buttons 
+     match the number with computer stat can select class
+        store them in variables ?
+
+
+
     // if (playerStat > compStat) {
         // add 1 point to player
     // } else if (compStat > playerStat)
         // +1 computer score
     // else no points
+
+    display comp card
+
+
+
+
 //   ===========> save points in variables
+
+
+
+
+
+
 // next round button (?)
+
+
+
+
+
 // select a new card and play again
         //display card could be a function and we can call it again when we go to next round (?)
 // limit the number of rounds

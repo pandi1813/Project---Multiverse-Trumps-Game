@@ -12,8 +12,8 @@ let startScreen = document.querySelector("#start-section");
 let gameScreen = document.querySelector("#game-section");
 let rulesScreen = document.querySelector("#rules-section");
 
-
-
+let playerCard = document.querySelector(".playerCon")
+let computerCard = document.querySelector(".pcCon")
 
 //************************* EVENT LISTENERS ***************************
 
@@ -167,3 +167,32 @@ function displayCards(playerHero, computerHero) {
 
 
 }
+
+
+//variables to store selected values - update them on button click
+let playerStat; 
+let compStat;
+
+
+
+// Event listener for power buttons
+
+playerCard.addEventListener("click", function () {
+    if (event.target.matches("button")) {
+
+        //variables
+        let selectedButton = event.target;    
+        let selectedStatClass = selectedButton.classList[1];
+        let computerStat = computerCard.querySelector(`.${selectedStatClass}`);
+        
+        // display computer card
+        computerCard.classList.remove("hide")
+
+        // change player and computer stat to the selected values
+        playerStat = selectedButton.querySelector(".card-text").innerHTML
+        compStat = computerStat.querySelector(".card-text").innerHTML;
+
+    }
+})
+
+
