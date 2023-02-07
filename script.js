@@ -173,7 +173,9 @@ function displayCards(playerHero, computerHero) {
 let playerStat; 
 let compStat;
 
-
+// variables to store player's and computer's scores
+let playerScore = 0;
+let computerScore = 0;
 
 // Event listener for power buttons
 
@@ -189,10 +191,19 @@ playerCard.addEventListener("click", function () {
         computerCard.classList.remove("hide")
 
         // change player and computer stat to the selected values
-        playerStat = selectedButton.querySelector(".card-text").innerHTML
-        compStat = computerStat.querySelector(".card-text").innerHTML;
+        playerStat = parseInt(selectedButton.querySelector(".card-text").innerHTML, 10);
+        compStat = parseInt(computerStat.querySelector(".card-text").innerHTML, 10);
+
+        // Compares the player's and computer's selected stats
+        if (playerStat > compStat) {
+            playerScore += 1;
+            localStorage.setItem("playerScore", JSON.stringify(playerScore));
+            localStorage.setItem("computerScore", JSON.stringify(computerScore));
+        } else if (compStat > playerStat) {
+            computerScore += 1;
+            localStorage.setItem("playerScore", JSON.stringify(playerScore));
+            localStorage.setItem("computerScore", JSON.stringify(computerScore));
+        }
 
     }
 })
-
-
