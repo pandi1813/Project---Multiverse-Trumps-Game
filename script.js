@@ -198,14 +198,16 @@ playerCard.addEventListener("click", function () {
         if (playerStat > compStat) {
             playerScore += 1;
             localStorage.setItem("playerScore", JSON.stringify(playerScore));
-            localStorage.setItem("computerScore", JSON.stringify(playerScore));
-        } else {
+            localStorage.setItem("computerScore", JSON.stringify(computerScore));
+            console.log("true");
+        } else if (compStat > playerStat) {
             computerScore += 1;
             localStorage.setItem("playerScore", JSON.stringify(playerScore));
             localStorage.setItem("computerScore", JSON.stringify(computerScore));
+            console.log("false");
         }
 
-        console.log(JSON.parse(localStorage.getItem("playerScore")));
-        console.log(JSON.parse(localStorage.getItem("computerScore")));
+        console.log(playerScore);
+        console.log(computerScore);
     }
 })
