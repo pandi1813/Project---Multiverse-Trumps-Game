@@ -21,6 +21,8 @@ let computerCard = document.querySelector(".pcCon")
 startBtn.addEventListener("click", function () {
     startScreen.classList.add("hide");
     gameScreen.classList.remove("hide");
+    getStats();
+
 })
 
 
@@ -93,53 +95,53 @@ function getGif(gifWord) {
 
 
 //************************* Hero stats for cards ***************************
+function getStats() {
+    // Codes to pull superheroes' data from API
+    fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
+        .then(response => response.json())
+        .then(heroData => {
 
-// Codes to pull superheroes' data from API
-fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
-    .then(response => response.json())
-    .then(heroData => {
+            // get a random superhero's data (for display on the card)
+            function getRandomHeroData(heroData) {
 
-        // get a random superhero's data (for display on the card)
-        function getRandomHeroData(heroData) {
+                // select a random superhero from the data
+                let randomHeroIndex = Math.floor(Math.random() * heroData.length);
+                let randomHero = heroData[randomHeroIndex];
 
-            // select a random superhero from the data
-            let randomHeroIndex = Math.floor(Math.random() * heroData.length);
-            let randomHero = heroData[randomHeroIndex];
+                // get superhero name
+                let heroName = randomHero.name;
 
-            // get superhero name
-            let heroName = randomHero.name;
+                // get superhero image (available image sizes: xs , sm, md, lg)
+                let imageURL = randomHero.images.sm;
 
-            // get superhero image (available image sizes: xs , sm, md, lg)
-            let imageURL = randomHero.images.sm;
+                // get superhero power stats
+                let intelligenceStat = randomHero.powerstats.intelligence;
+                let strengthStat = randomHero.powerstats.strength;
+                let speedStat = randomHero.powerstats.speed;
+                let durabilityStat = randomHero.powerstats.durability;
+                let powerStat = randomHero.powerstats.power;
+                let combatStat = randomHero.powerstats.combat;
 
-            // get superhero power stats
-            let intelligenceStat = randomHero.powerstats.intelligence;
-            let strengthStat = randomHero.powerstats.strength;
-            let speedStat = randomHero.powerstats.speed;
-            let durabilityStat = randomHero.powerstats.durability;
-            let powerStat = randomHero.powerstats.power;
-            let combatStat = randomHero.powerstats.combat;
+                return {
+                    heroName,
+                    imageURL,
+                    intelligenceStat,
+                    strengthStat,
+                    speedStat,
+                    durabilityStat,
+                    powerStat,
+                    combatStat,
+                };
+            }
 
-            return {
-                heroName,
-                imageURL,
-                intelligenceStat,
-                strengthStat,
-                speedStat,
-                durabilityStat,
-                powerStat,
-                combatStat,
-            };
-        }
+            // put superhero attributes into player's card
+            let playerHero = getRandomHeroData(heroData);
 
-        // put superhero attributes into player's card
-        let playerHero = getRandomHeroData(heroData);
-
-        // put superhero attributes into computer's card     
-        let computerHero = getRandomHeroData(heroData);
-        displayCards(playerHero, computerHero)
-    });
-
+            // put superhero attributes into computer's card     
+            let computerHero = getRandomHeroData(heroData);
+            displayCards(playerHero, computerHero)
+        });
+}
 
 //*************************Card details displayed *************************** */
 
@@ -170,7 +172,7 @@ function displayCards(playerHero, computerHero) {
 
 
 //variables to store selected values - update them on button click
-let playerStat; 
+let playerStat;
 let compStat;
 
 // variables to store player's and computer's scores
@@ -178,17 +180,22 @@ let playerScore = 0;
 let computerScore = 0;
 
 // Event listener for power buttons
+let i = 0;
+let nextRoundBtn = document.querySelector("#nextRound");
+let powers = document.querySelector("#playerPowers");
+nextRoundBtn.classList.add("hide");
 
 playerCard.addEventListener("click", function () {
-    if (event.target.matches("button")) {
+    if (event.target.matches("button") && i < 10) {
+        computerCard.classList.remove("hide");
+
 
         //variables
-        let selectedButton = event.target;    
+        let selectedButton = event.target;
         let selectedStatClass = selectedButton.classList[1];
         let computerStat = computerCard.querySelector(`.${selectedStatClass}`);
-        
+
         // display computer card
-        computerCard.classList.remove("hide")
 
         // change player and computer stat to the selected values
         playerStat = parseInt(selectedButton.querySelector(".card-text").innerHTML, 10);
@@ -204,6 +211,22 @@ playerCard.addEventListener("click", function () {
             localStorage.setItem("playerScore", JSON.stringify(playerScore));
             localStorage.setItem("computerScore", JSON.stringify(computerScore));
         }
+        console.log(playerScore);
+        console.log(computerScore);
 
+        nextRoundBtn.classList.remove("hide");
+        ++i;
+        powers.querySelectorAll("button").forEach(button => {
+            button.setAttribute("disabled", "true");
+        });
     }
-})
+    nextRoundBtn.addEventListener("click", function () {
+        getStats();
+        computerCard.classList.add("hide");
+        nextRoundBtn.classList.add("hide");
+        powers.querySelectorAll("button").forEach(button => {
+            button.removeAttribute("disabled");
+            });
+    });
+}
+);
