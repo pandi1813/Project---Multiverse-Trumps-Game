@@ -168,6 +168,8 @@ function displayCards(playerHero, computerHero) {
 
 }
 
+
+//variables to store selected values - update them on button click
 let playerStat; 
 let compStat;
 
@@ -183,12 +185,10 @@ playerCard.addEventListener("click", function () {
         let selectedStatClass = selectedButton.classList[1];
         let computerStat = computerCard.querySelector(`.${selectedStatClass}`);
         
+        // display computer card
         computerCard.classList.remove("hide")
 
-        console.log("statClass: "+selectedStatClass)
-        console.log("player stat: "+selectedButton.querySelector(".card-text").innerHTML)
-        console.log("computer stat: "+computerStat.querySelector(".card-text").innerHTML)
-
+        // change player and computer stat to the selected values
         playerStat = selectedButton.querySelector(".card-text").innerHTML
         compStat = computerStat.querySelector(".card-text").innerHTML;
 
