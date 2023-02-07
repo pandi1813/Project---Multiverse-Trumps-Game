@@ -199,15 +199,11 @@ playerCard.addEventListener("click", function () {
             playerScore += 1;
             localStorage.setItem("playerScore", JSON.stringify(playerScore));
             localStorage.setItem("computerScore", JSON.stringify(computerScore));
-            console.log("true");
         } else if (compStat > playerStat) {
             computerScore += 1;
             localStorage.setItem("playerScore", JSON.stringify(playerScore));
             localStorage.setItem("computerScore", JSON.stringify(computerScore));
-            console.log("false");
         }
 
-        console.log(playerScore);
-        console.log(computerScore);
     }
 })
