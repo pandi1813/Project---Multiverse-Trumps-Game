@@ -6,47 +6,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superhero Trump game</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css" />
 
 </head>
+
 <body>
-    
+
     <section class="display" id="start-section">
         <!-- <div class="jumbotron"> -->
-            <h1 class="display-4 show">Heroes & Villains Epic Faceoff</h1>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptates nemo, fugiat nobis minus eos fugit perspiciatis, asperiores distinctio doloremque vel voluptatem corporis natus molestias quod nisi numquam unde? A.</p>
-           
-            
-            <button type="button" id="play-btn" class="btn btn-warning">Play!</button>
-            <button type="button" id="rule-btn" class="btn btn-primary">Rules</button>
-          <!-- </div> -->
+        <h1 class="display-4 show"> Heroes & Villains Epic Faceoff </h1>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptates nemo, fugiat nobis</p>
+
+
+        <button type="button" id="play-btn" class="btn btn-warning">Play!</button>
+        <button type="button" id="rule-btn" class="btn btn-primary">Rules</button>
+        <!-- </div> -->
     </section>
 
-    <section id="rules-section" class="hide" >
+    <section id="rules-section" class="hide">
         <h2>How to play?</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nihil provident, facere quidem accusantium enim ut sapiente! Totam, iusto. Temporibus repellendus ad quam voluptatibus hic voluptatem reprehenderit tempore reiciendis accusamus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nihil provident, facere quidem accusantium enim
+            ut sapiente! Totam, iusto. Temporibus repellendus ad quam voluptatibus hic voluptatem reprehenderit tempore
+            reiciendis accusamus?</p>
         <button id="return-btn">Return</button>
     </section>
-    <section id="game-section" class="hide"></section>
+    <game id="game-section" class="hide row flex"  >
+        <!-- player card -->
+        <div class="container col-2 playerCon">
+            <div class="card-deck">
+                <div class="card align-items-center">
+                    <img src="" class="card-img-top " id="playerImg">
+                    <div class="card-body">
+                        <a>Your card &nbsp&nbsp&nbsp</a>
+                        <h2 id="playerName"></h2>
+                        <button class="card-title int">Intelligence <p class="card-text" id="intelligenceValue"></p>
+                        </button>
+                        <button class="card-title str">Strength <p class="card-text" id="strengthValue"></p>
+                        </button>
+                        <button class="card-title spd">Speed <p class="card-text" id="speedValue"></p>
+                        </button>
+                        <button class="card-title dur">Durability <p class="card-text" id="durabilityValue"></p>
+                        </button>
+                        <button class="card-title pow ">Power <p class="card-text" id="powerValue"></p>
+                        </button>
+                        <button class="card-title com">Combat <p class="card-text" id="combatValue"></p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- computer card -->
+        <div class="container col-2 pcCon">
+            <div class="card-deck">
+                <div class="card align-items-center">
+                    <img src="" class="card-img-top" id="pcImg">
+                    <div class="card-body">
+                        <a>Opponents card</a>
+                        <h2 id="pcName"></h2>
+                        <button class="card-title int">Intelligence <p class="card-text" id="pcIntelligenceValue"></p>
+                        </button>
+                        <button class="card-title str">Strength <p class="card-text" id="pcStrengthValue"></p>
+                        </button>
+                        <button class="card-title spd">Speed <p class="card-text" id="pcSpeedValue"></p>
+                        </button>
+                        <button class="card-title dur">Durability <p class="card-text" id="pcDurabilityValue"></p>
+                        </button>
+                        <button class="card-title pow">Power <p class="card-text" id="pcPowerValue"></p>
+                        </button>
+                        <button class="card-title com">Combat <p class="card-text" id="pcCombatValue"></p>
+                        </button>
 
-<div class="container text-center" id="resultText">
-    <div class="row resultGif">
-        <img src="" id="gif"></img>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </game>
 
     <section id="end-section" class="hide">
-    
-    <div class="container text-center" id="resultText">
-    <div class="row resultGif">
-        <img src="" id="gif"></img>
-        
+
+        <div class="container text-center" id="resultText">
+            <div class="row resultGif">
+                <img src="" id="gif"></img>
+
     </section>
 
 
-<script src="./script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

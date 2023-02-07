@@ -37,50 +37,62 @@ returnBtn.addEventListener("click", function () {
 })
 
 
-let gameResultLose = ["youlose", "looser", "sad", "tryme"]
-let gameResultWin = ["winning", "victory", "cheers"]
-let gameResultTie = [, "muhaha", "ha", "haha", "goodluck", "really"]
-let gameResult = ""
+//************************* Gif generator ***************************
+
+// Declare arrays to store different game results and messages
+let gameResultLose = ["youlose", "looser", "sad", "tryme"];
+let gameResultWin = ["winning", "victory", "cheers"];
+let gameResultTie = [, "muhaha", "ha", "haha", "goodluck", "really"];
+let gameResult = "";
 
 let text = "";
 let score = "win";
 winOrLose();
 
-
+// Function to determine the result of the game based on the score variable
 function winOrLose() {
     if (score === "win") {
+        // Randomly select a message from the gameResultWin array
         const randomWin = Math.floor(Math.random() * gameResultWin.length);
         gameResult = gameResultWin[randomWin];
         text = "Congratulations You Won !";
     } else if (score === "lose") {
+        // Randomly select a message from the gameResultLose array
         const randomLose = Math.floor(Math.random() * gameResultLose.length);
         gameResult = gameResultLose[randomLose];
         text = "Sorry, You Lost !";
     } else {
+        // Randomly select a message from the gameResultTie array
         const randomTie = Math.floor(Math.random() * gameResultTie.length);
         gameResult = gameResultTie[randomTie];
         text = "It's a Tie !";
     }
 
+    // Create an h1 element with the result text
     let textEl = document.createElement("h1");
     textEl.textContent = text;
+    // Append the h1 element to the resultText element in the HTML
     document.querySelector("#resultText").appendChild(textEl);
 
+    // Call the getGif function with the gameResult variable as an argument
     getGif(gameResult);
 }
 
+// Function to retrieve a GIF from the gfycat API based on the gifWord argument
 function getGif(gifWord) {
-
     fetch(`https://api.gfycat.com/v1/gfycats/search?search_text=${gifWord}`)
         .then(response => response.json())
         .then(data => {
+            // Select the 3rd GIF from the API response
             let selectedGif = data.gfycats[2].max2mbGif;
+            // Set the src attribute of the gif element to the selected GIF
             let gifEl = document.querySelector("#gif");
             gifEl.src = selectedGif;
-        })
+        });
 }
 
 
+//************************* Hero stats for cards ***************************
 
 // Codes to pull superheroes' data from API
 fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
@@ -125,4 +137,33 @@ fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
 
         // put superhero attributes into computer's card     
         let computerHero = getRandomHeroData(heroData);
+        displayCards(playerHero, computerHero)
     });
+
+
+//*************************Card details displayed *************************** */
+
+function displayCards(playerHero, computerHero) {
+
+    document.getElementById('playerImg').src = playerHero.imageURL;
+    document.getElementById('playerName').innerHTML = playerHero.heroName;
+    document.getElementById('intelligenceValue').innerHTML = playerHero.intelligenceStat;
+    document.getElementById('strengthValue').innerHTML = playerHero.strengthStat;
+    document.getElementById('speedValue').innerHTML = playerHero.speedStat;
+    document.getElementById('durabilityValue').innerHTML = playerHero.durabilityStat;
+    document.getElementById('powerValue').innerHTML = playerHero.powerStat;
+    document.getElementById('combatValue').innerHTML = playerHero.combatStat;
+
+
+    document.getElementById('pcImg').src = computerHero.imageURL;
+    document.getElementById('pcName').innerHTML = computerHero.heroName;
+    document.getElementById('pcIntelligenceValue').innerHTML = computerHero.intelligenceStat;
+    document.getElementById('pcStrengthValue').innerHTML = computerHero.strengthStat;
+    document.getElementById('pcSpeedValue').innerHTML = computerHero.speedStat;
+    document.getElementById('pcDurabilityValue').innerHTML = computerHero.durabilityStat;
+    document.getElementById('pcPowerValue').innerHTML = computerHero.powerStat;
+    document.getElementById('pcCombatValue').innerHTML = computerHero.combatStat;
+
+
+
+}
