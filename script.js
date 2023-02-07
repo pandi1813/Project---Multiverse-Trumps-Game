@@ -168,16 +168,31 @@ function displayCards(playerHero, computerHero) {
 
 }
 
+let playerStat; 
+let compStat;
+
+
+
+// Event listener for power buttons
+
 playerCard.addEventListener("click", function () {
     if (event.target.matches("button")) {
-        let selectedStat = event.target;
 
-        console.log(selectedStat.querySelector(".card-text").innerHTML)
+        //variables
+        let selectedButton = event.target;    
+        let selectedStatClass = selectedButton.classList[1];
+        let computerStat = computerCard.querySelector(`.${selectedStatClass}`);
+        
         computerCard.classList.remove("hide")
 
-        console.log(selectedStat.classList[1])
+        console.log("statClass: "+selectedStatClass)
+        console.log("player stat: "+selectedButton.querySelector(".card-text").innerHTML)
+        console.log("computer stat: "+computerStat.querySelector(".card-text").innerHTML)
 
+        playerStat = selectedButton.querySelector(".card-text").innerHTML
+        compStat = computerStat.querySelector(".card-text").innerHTML;
 
     }
 })
+
 
