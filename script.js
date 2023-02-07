@@ -12,8 +12,8 @@ let startScreen = document.querySelector("#start-section");
 let gameScreen = document.querySelector("#game-section");
 let rulesScreen = document.querySelector("#rules-section");
 
-
-
+let playerCard = document.querySelector(".playerCon")
+let computerCard = document.querySelector(".pcCon")
 
 //************************* EVENT LISTENERS ***************************
 
@@ -167,3 +167,15 @@ function displayCards(playerHero, computerHero) {
 
 
 }
+
+playerCard.addEventListener("click", function () {
+    if (event.target.matches("button")) {
+        let selectedStat = event.target;
+
+        console.log(selectedStat.querySelector(".card-text").innerHTML)
+        computerCard.classList.remove("hide")
+
+
+    }
+})
+
