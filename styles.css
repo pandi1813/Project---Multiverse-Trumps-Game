@@ -271,6 +271,7 @@ p {
     font-size: 100%;
 }
 
+<<<<<<< HEAD
 /* Styles current scores in the game screen */
 #player-score {
     position: absolute;
@@ -285,3 +286,35 @@ p {
     right: 11%;
     font-size: 110%;
 }
+=======
+.resultScreen{
+    display: grid;
+}
+
+#gif{
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    width: 600px;
+    height: auto;
+}
+/* 
+#endText h1{
+    position: absolute;
+    right: 15%;
+}
+
+#player-score h1{
+    position: relative;
+    margin: 5px;
+    right: 24%;
+    top: 20%;
+}
+
+#computer-score h1{
+    position: relative;
+    margin: 5px;
+    right: 20%;
+    top: 30%;
+} */
+>>>>>>> 3a9f424b835c67e9c58a61bdef34ccf2b5b46cf3
