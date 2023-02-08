@@ -15,6 +15,10 @@ let rulesScreen = document.querySelector("#rules-section");
 let playerCard = document.querySelector(".playerCon")
 let computerCard = document.querySelector(".pcCon")
 
+// variables for scores
+let playerScoreEl = document.querySelector("#player-score");
+let computerScoreEL = document.querySelector("#computer-score");
+
 //************************* EVENT LISTENERS ***************************
 
 // start screen --> game screen
@@ -175,16 +179,20 @@ let compStat;
 
 // variables to store player's and computer's scores
 let playerScore = 0;
-localStorage.setItem("playerScore", JSON.stringify(playerScore));
-
 let computerScore = 0;
-localStorage.setItem("computerScore", JSON.stringify(computerScore));
+
+// function to store scores in local storage
+function storeScores() {
+    localStorage.setItem("playerScore", JSON.stringify(playerScore));
+    localStorage.setItem("computerScore", JSON.stringify(computerScore));
+}
+
+storeScores();
 
 // Event listener for power buttons
 
 playerCard.addEventListener("click", function () {
     if (event.target.matches("button")) {
-
         //variables
         let selectedButton = event.target;    
         let selectedStatClass = selectedButton.classList[1];
@@ -200,28 +208,16 @@ playerCard.addEventListener("click", function () {
         // Compares the player's and computer's selected stats
         if (playerStat > compStat) {
             playerScore += 1;
-            localStorage.setItem("playerScore", JSON.stringify(playerScore));
-            localStorage.setItem("computerScore", JSON.stringify(computerScore));
+            storeScores();
         } else if (compStat > playerStat) {
             computerScore += 1;
-            localStorage.setItem("playerScore", JSON.stringify(playerScore));
-            localStorage.setItem("computerScore", JSON.stringify(computerScore));
+            storeScores();
         }
-
-        console.log(JSON.parse(localStorage.getItem("playerScore")));
-        console.log(JSON.parse(localStorage.getItem("computerScore")));
-
+        
+        let getPlayerScore = JSON.parse(localStorage.getItem("playerScore"));
+        let getComputerScore = JSON.parse(localStorage.getItem("computerScore"));
+        
+        playerScoreEl.textContent = (`Player Score: ${getPlayerScore}`);
+        computerScoreEL.textContent = (`Computer Score: ${getComputerScore}`);
     }
 })
-
-// displays current scores
-let playerScoreEl = document.querySelector("#player-score");
-let computerScoreEL = document.querySelector("#computer-score");
-
-let getPlayerScore = JSON.parse(localStorage.getItem("playerScore"));
-let getComputerScore = JSON.parse(localStorage.getItem("computerScore"));
-
-playerScoreEl.textContent
-
-console.log("Player score2: " + getPlayerScore);
-console.log("Computer score2: " + getComputerScore);
