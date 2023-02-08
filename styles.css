@@ -270,3 +270,34 @@ p {
 .card-body h2 {
     font-size: 100%;
 }
+
+.resultScreen{
+    display: grid;
+}
+
+#gif{
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    width: 600px;
+    height: auto;
+}
+/* 
+#endText h1{
+    position: absolute;
+    right: 15%;
+}
+
+#player-score h1{
+    position: relative;
+    margin: 5px;
+    right: 24%;
+    top: 20%;
+}
+
+#computer-score h1{
+    position: relative;
+    margin: 5px;
+    right: 20%;
+    top: 30%;
+} */

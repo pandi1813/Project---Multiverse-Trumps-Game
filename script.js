@@ -11,6 +11,7 @@ let returnBtn = document.querySelector("#return-btn");
 let startScreen = document.querySelector("#start-section");
 let gameScreen = document.querySelector("#game-section");
 let rulesScreen = document.querySelector("#rules-section");
+let gameEnd = document.querySelector("#end-section");
 
 let playerCard = document.querySelector(".playerCon")
 let computerCard = document.querySelector(".pcCon")
@@ -21,6 +22,7 @@ let computerCard = document.querySelector(".pcCon")
 startBtn.addEventListener("click", function () {
     startScreen.classList.add("hide");
     gameScreen.classList.remove("hide");
+    finishBtn.classList.add("hide");
     getStats();
 
 })
@@ -47,18 +49,17 @@ let gameResultWin = ["winning", "victory", "cheers"];
 let gameResultTie = [, "muhaha", "ha", "haha", "goodluck", "really"];
 let gameResult = "";
 
-let text = "";
-let score = "win";
-winOrLose();
+
+
 
 // Function to determine the result of the game based on the score variable
 function winOrLose() {
-    if (score === "win") {
+    if (playerScore > computerScore) {
         // Randomly select a message from the gameResultWin array
         const randomWin = Math.floor(Math.random() * gameResultWin.length);
         gameResult = gameResultWin[randomWin];
         text = "Congratulations You Won !";
-    } else if (score === "lose") {
+    } else if (playerScore < computerScore) {
         // Randomly select a message from the gameResultLose array
         const randomLose = Math.floor(Math.random() * gameResultLose.length);
         gameResult = gameResultLose[randomLose];
@@ -73,6 +74,7 @@ function winOrLose() {
     // Create an h1 element with the result text
     let textEl = document.createElement("h1");
     textEl.textContent = text;
+    textEl.classList.add("endText");
     // Append the h1 element to the resultText element in the HTML
     document.querySelector("#resultText").appendChild(textEl);
 
@@ -182,6 +184,7 @@ let computerScore = 0;
 // Event listener for power buttons
 let i = 0;
 let nextRoundBtn = document.querySelector("#nextRound");
+let finishBtn = document.querySelector("#finishGame");
 let powers = document.querySelector("#playerPowers");
 nextRoundBtn.classList.add("hide");
 
@@ -211,8 +214,15 @@ playerCard.addEventListener("click", function () {
             localStorage.setItem("playerScore", JSON.stringify(playerScore));
             localStorage.setItem("computerScore", JSON.stringify(computerScore));
         }
-        console.log(playerScore);
-        console.log(computerScore);
+
+
+
+
+
+
+
+
+
 
         nextRoundBtn.classList.remove("hide");
         ++i;
@@ -220,13 +230,46 @@ playerCard.addEventListener("click", function () {
             button.setAttribute("disabled", "true");
         });
     }
+    else if (i >= 10) {
+        finishBtn.classList.remove("hide");
+        finishBtn.addEventListener("click", function (){
+            gameEnd.classList.remove("hide");
+            gameScreen.classList.add("hide");
+            computerCard.classList.add("hide");
+            playerCard.classList.add("hide");
+            endScore()
+            winOrLose()
+
+        }
+
+)}
     nextRoundBtn.addEventListener("click", function () {
         getStats();
         computerCard.classList.add("hide");
         nextRoundBtn.classList.add("hide");
         powers.querySelectorAll("button").forEach(button => {
             button.removeAttribute("disabled");
-            });
+        });
     });
+});
+
+
+
+
+
+
+function endScore() {
+    let totalScores = document.querySelector("#resultText");
+    let scoreEl = document.createElement("h1");
+    let score2El = document.createElement("h1");
+    scoreEl.textContent = "Your score is: " + playerScore;
+    scoreEl.classList.add("player-score");
+    score2El.textContent = "Computers score is: " + computerScore;
+    score2El.classList.add("computer-score");
+
+    // Append the h1 element to the resultText element in the HTML
+    totalScores.appendChild(scoreEl);
+    totalScores.appendChild(score2El)
+
+
 }
-);
