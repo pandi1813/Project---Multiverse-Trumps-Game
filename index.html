@@ -38,20 +38,20 @@
             <div class="card-deck">
                 <div class="card align-items-center">
                     <img src="" class="card-img-top " id="playerImg">
-                    <div class="card-body">
+                    <div class="card-body" id="playerPowers">
                         <a>Your card &nbsp&nbsp&nbsp</a>
                         <h2 id="playerName"></h2>
-                        <button class="card-title int">Intelligence <p class="card-text" id="intelligenceValue"></p>
+                        <button class="card-title int">Intelligence <p class="card-text"  id="intelligenceValue"></p>
                         </button>
-                        <button class="card-title str">Strength <p class="card-text" id="strengthValue"></p>
+                        <button class="card-title str">Strength <p class="card-text"  id="strengthValue"></p>
                         </button>
-                        <button class="card-title spd">Speed <p class="card-text" id="speedValue"></p>
+                        <button class="card-title spd">Speed <p class="card-text"  id="speedValue"></p>
                         </button>
-                        <button class="card-title dur">Durability <p class="card-text" id="durabilityValue"></p>
+                        <button class="card-title dur">Durability <p class="card-text"  id="durabilityValue"></p>
                         </button>
-                        <button class="card-title pow ">Power <p class="card-text" id="powerValue"></p>
+                        <button class="card-title pow ">Power <p class="card-text"  id="powerValue"></p>
                         </button>
-                        <button class="card-title com">Combat <p class="card-text" id="combatValue"></p>
+                        <button class="card-title com">Combat <p class="card-text"  id="combatValue"></p>
                         </button>
                     </div>
                 </div>
@@ -82,11 +82,13 @@
                 </div>
             </div>
         </div>
+        <button id="nextRound" class="nextRound">NEXT</button>
+        <button id="finishGame">FINISH</button>
     </game>
 
     <section id="end-section" class="hide">
 
-        <div class="container text-center" id="resultText">
+        <div class="container text-center resultScreen" id="resultText">
             <div class="row resultGif">
                 <img src="" id="gif"></img>
 
