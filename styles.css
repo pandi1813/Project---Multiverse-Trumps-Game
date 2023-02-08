@@ -26,16 +26,30 @@ body {
     width: 100vw;
     outline-style: groove;
     outline-width: 15px;
+    z-index: 1;
 }
 
 #start-section h1 {
     text-align: center;
-    padding: 8vh 0 20vh;
-    color: yellow;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding: 8vh 0 8vh;
+    color: red;
+    margin-top: 60vh;
+    text-shadow: -1px -1px 0 #000, 10px -5px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     font-family: Victory;
     font-size: 5vw;
+    z-index: 5;
+    background-image: url(./assets/images/comic-explosion-banner-1.png);
+    background-size: 100% 270%;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    bottom: 20vh;
+    
 }
+
+/* #banner-img {
+    z-index: 4;
+} */
 
 
 
