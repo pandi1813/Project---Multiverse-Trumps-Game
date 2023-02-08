@@ -175,7 +175,10 @@ let compStat;
 
 // variables to store player's and computer's scores
 let playerScore = 0;
+localStorage.setItem("playerScore", JSON.stringify(playerScore));
+
 let computerScore = 0;
+localStorage.setItem("computerScore", JSON.stringify(computerScore));
 
 // Event listener for power buttons
 
@@ -205,5 +208,20 @@ playerCard.addEventListener("click", function () {
             localStorage.setItem("computerScore", JSON.stringify(computerScore));
         }
 
+        console.log(JSON.parse(localStorage.getItem("playerScore")));
+        console.log(JSON.parse(localStorage.getItem("computerScore")));
+
     }
 })
+
+// displays current scores
+let playerScoreEl = document.querySelector("#player-score");
+let computerScoreEL = document.querySelector("#computer-score");
+
+let getPlayerScore = JSON.parse(localStorage.getItem("playerScore"));
+let getComputerScore = JSON.parse(localStorage.getItem("computerScore"));
+
+playerScoreEl.textContent
+
+console.log("Player score2: " + getPlayerScore);
+console.log("Computer score2: " + getComputerScore);
