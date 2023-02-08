@@ -186,7 +186,6 @@ function storeScores() {
     localStorage.setItem("playerScore", JSON.stringify(playerScore));
     localStorage.setItem("computerScore", JSON.stringify(computerScore));
 }
-
 storeScores();
 
 // function to display current scores on game page
@@ -199,15 +198,15 @@ function displayScores() {
     playerScoreEl.textContent = (`Player Score: ${currentPlayerScore}`);
     computerScoreEL.textContent = (`Computer Score: ${currentComputerScore}`);
 }
-
 displayScores();
 
 // Event listener for power buttons
 
 playerCard.addEventListener("click", function () {
-    if (event.target.matches("button")) {
+    if (event.target.matches("button") || event.target.matches("p")) {
+        
         //variables
-        let selectedButton = event.target;    
+        let selectedButton = event.target.closest("button");
         let selectedStatClass = selectedButton.classList[1];
         let computerStat = computerCard.querySelector(`.${selectedStatClass}`);
         
