@@ -285,5 +285,4 @@ function endScore() {
     totalScores.appendChild(scoreEl);
     totalScores.appendChild(score2El)
 
-
 }
