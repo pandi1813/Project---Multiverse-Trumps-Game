@@ -212,7 +212,7 @@ let powers = document.querySelector("#playerPowers");
 nextRoundBtn.classList.add("hide");
 
 playerCard.addEventListener("click", function () {
-    if (event.target.matches("button") || event.target.matches("p") && i < 10) {
+    if ((event.target.matches("button")  || event.target.matches("p")) && i < 10) {
         computerCard.classList.remove("hide");
 
         //variables

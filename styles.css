@@ -271,7 +271,6 @@ p {
     font-size: 100%;
 }
 
-<<<<<<< HEAD
 /* Styles current scores in the game screen */
 #player-score {
     position: absolute;
@@ -286,7 +285,6 @@ p {
     right: 11%;
     font-size: 110%;
 }
-=======
 .resultScreen{
     display: grid;
 }
@@ -317,4 +315,3 @@ p {
     right: 20%;
     top: 30%;
 } */
->>>>>>> 3a9f424b835c67e9c58a61bdef34ccf2b5b46cf3
