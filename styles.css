@@ -2,6 +2,13 @@
     font-family: Victory;
 src: url(./assets/font/victory-comics-font/VictoryComics-Mgow.otf);
 }
+
+@font-face {
+    font-family: Comic;
+    src: url(./assets/font/smack_boom/Smack\ Boom.ttf);
+}
+
+
 body {
     display: flex;
     align-items: center;
@@ -62,13 +69,54 @@ body {
 }
 
 #play-btn {
+    /* display: block; */
+    /* margin: 10vh auto; */
+    /* height: 10vh; */
+    /* width: 10vw; */
+    /* font-size: 3rem; */
+    /* position: absolute; */
+    /* height: 25vh; */
+    /* padding: 20; */
+    /* top: 5vh; */
+    /* left: 50vw; */
+}
+
+#play-btn p:hover {
+height: 35vh;
+font-size: 6vh;
+cursor: pointer;
+}
+
+/* #play-btn img {
+    height: 25vh;
+    position: absolute;
+   
+    z-index: 2;
+    
+    left: 2vw;
+    right: 0vw;
+    margin: auto;
+} */
+
+#play-btn p {
     display: block;
-    margin: 10vh auto;
-    background-color: red;
-    border-radius: 50%;
-    height: 120px;
-    width: 150px;
-    font-size: 40px;
+    position: absolute;
+    padding-top: 6vh;
+    left: 7vw;
+    right: 0;
+    top: 5vh;
+    font-size: 5vh;
+    font-family: Comic;
+    color: red;
+
+    margin: auto;
+    z-index: 4;
+    background-image: url(./assets/images/pngegg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 10vw;
+
 }
 
 #rule-btn {
