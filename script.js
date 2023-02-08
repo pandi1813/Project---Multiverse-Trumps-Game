@@ -189,6 +189,19 @@ function storeScores() {
 
 storeScores();
 
+// function to display current scores on game page
+function displayScores() {
+    
+    // variables to get scores from local storage
+    let currentPlayerScore = JSON.parse(localStorage.getItem("playerScore"));
+    let currentComputerScore = JSON.parse(localStorage.getItem("computerScore"));
+    
+    playerScoreEl.textContent = (`Player Score: ${currentPlayerScore}`);
+    computerScoreEL.textContent = (`Computer Score: ${currentComputerScore}`);
+}
+
+displayScores();
+
 // Event listener for power buttons
 
 playerCard.addEventListener("click", function () {
@@ -213,13 +226,8 @@ playerCard.addEventListener("click", function () {
             computerScore += 1;
             storeScores();
         }
-        
-        // get scores from local storage
-        let getPlayerScore = JSON.parse(localStorage.getItem("playerScore"));
-        let getComputerScore = JSON.parse(localStorage.getItem("computerScore"));
-        
-        // display scores in the game page
-        playerScoreEl.textContent = (`Player Score: ${getPlayerScore}`);
-        computerScoreEL.textContent = (`Computer Score: ${getComputerScore}`);
+              
+        // display current scores in the game page
+        displayScores();
     }
 })
