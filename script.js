@@ -214,9 +214,11 @@ playerCard.addEventListener("click", function () {
             storeScores();
         }
         
+        // get scores from local storage
         let getPlayerScore = JSON.parse(localStorage.getItem("playerScore"));
         let getComputerScore = JSON.parse(localStorage.getItem("computerScore"));
         
+        // display scores in the game page
         playerScoreEl.textContent = (`Player Score: ${getPlayerScore}`);
         computerScoreEL.textContent = (`Computer Score: ${getComputerScore}`);
     }
