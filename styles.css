@@ -1,8 +1,24 @@
+@font-face {
+    font-family: Victory;
+src: url(./assets/font/victory-comics-font/VictoryComics-Mgow.otf);
+}
+
+@font-face {
+    font-family: Comic;
+    src: url(./assets/font/smack_boom/Smack\ Boom.ttf);
+}
+
+
+@font-face {
+    font-family: Comic-Subtitle;
+    src: url(./assets/font/WaveWarriorItalic-51P6V.otf);
+}
+
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 50px;
+    margin: 0;
 }
 
 
@@ -14,41 +30,81 @@ body {
 
 /* start screen styling */
 #start-section {
-    background-image: url(./assets/222.jpg);
+    background-image: url(./assets/images/222.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 180%;
-    width: 70%;
+    height: 100vh;
+    width: 100vw;
     outline-style: groove;
     outline-width: 15px;
+    z-index: 1;
 }
 
 #start-section h1 {
     text-align: center;
-    padding: 8vh 0 20vh;
-    color: aqua;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding: 8vh 0 8vh;
+    color: red;
+    margin-top: 60vh;
+    text-shadow: -1px -1px 0 #000, 10px -5px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-family: Victory;
+    font-size: 5vw;
+    z-index: 5;
+    background-image: url(./assets/images/comic-explosion-banner-1.png);
+    background-size: 100% 270%;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    bottom: 20vh;
+    
 }
+
+
 
 
 
 
 #start-section p {
+    display: block;
     text-align: center;
-    margin: 0 5vw;
-    color: aqua;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-family: Comic-Subtitle;
+    font-size: 4vh;
+    color: yellow;
+    text-shadow: -1px -1px 0 #000, 5px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-#play-btn {
+
+
+#play-btn p:hover {
+height: 35vh;
+width: 15vw;
+font-size: 5vh;
+cursor: pointer;
+padding-top: 6vh;
+}
+
+
+
+#play-btn p {
     display: block;
-    margin: 10vh auto;
-    background-color: red;
-    border-radius: 50%;
-    height: 120px;
-    width: 150px;
-    font-size: 40px;
+    position: absolute;
+    padding-top: 7vh;
+    padding-right: 3vw;
+    left: -1vw;
+    right: 0;
+    top: 35vh;
+    font-size: 4vh;
+    font-family: Comic;
+    color: red;
+
+    margin: auto;
+   
+    background-image: url(./assets/images/pngegg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 20vw;
+
 }
 
 #rule-btn {
@@ -66,12 +122,12 @@ game {
     background: url(./assets/22033.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-attachment: fixed;
     outline-style: groove;
     outline-width: 15px;
     height: 100vh;
-    width: 170vh;
+    width: 150vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +138,8 @@ game {
 
 .card {
     /* width: 80px; */
-    height: 380px;
+    height: 40vh;
+    width: 70vw;
     object-fit: fill;
     background-color: rgb(0, 0, 0);
     display: flex;
@@ -137,6 +194,7 @@ p {
     position: absolute;
     z-index: 1;
     color: white;
+    font-family: Comic Subtitle;
     text-align: center;
     right: 5%;
     top: -20%;
@@ -195,6 +253,7 @@ p {
     width: 100%;
     height: 8%;
     -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     border: 0px;
     line-height: 1em;
     font-size: smaller;
@@ -213,6 +272,7 @@ p {
 .pow:hover,
 .com:hover {
     -webkit-transform: scale(1.5);
+    transform: scale(1.5);
     background: rgb(0, 0, 0);
     color: white;
 }
