@@ -138,7 +138,7 @@ game {
 
 .card {
     /* width: 80px; */
-    height: 40vh;
+    height: 380px;
     width: 70vw;
     object-fit: fill;
     background-color: rgb(0, 0, 0);
