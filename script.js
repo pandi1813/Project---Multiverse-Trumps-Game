@@ -297,6 +297,8 @@ console.log(saveScores);
 let saveBtn = document.querySelector("#save-name")
 let nameInput = document.querySelector("#player-name")
 
+
+// save player name 
 saveBtn.addEventListener("click", function () {
 
 
@@ -305,7 +307,34 @@ saveBtn.addEventListener("click", function () {
     localStorage.setItem("playerNames", JSON.stringify(storeNames));
 
     saveScores.push(playerScore);
-    localStorage.setItem("playerScores", JSON.stringify(storeScores));
+    localStorage.setItem("playerScores", JSON.stringify(saveScores));
 
     console.log(localStorage);
+    displayHighScores();
 })
+
+
+// display scores
+
+let highScoresDiv = document.querySelector("#highscores")
+let playerNames = JSON.parse(localStorage.getItem("playerNames")) || [];
+let playerScores = JSON.parse(localStorage.getItem("playerScores")) || [];
+
+let sortedScores = playerScores.sort();
+console.log("sort: " + sortedScores)
+let reversedScores = sortedScores.reverse();
+console.log( "reverse: " + reversedScores);
+
+displayHighScores();
+function displayHighScores() {
+    for (let i = 0; i < reversedScores.length; i++) {
+        let nameIndex = playerScores.indexOf(reversedScores[i]);
+        console.log(nameIndex);
+        let playerName = playerNames[nameIndex];
+    
+        let liElement = document.createElement("li");
+        liElement.textContent = playerName + ": " + reversedScores[i]
+        highScoresDiv.append(liElement);
+    }
+    
+}
