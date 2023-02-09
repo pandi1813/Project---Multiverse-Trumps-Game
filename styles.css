@@ -114,12 +114,13 @@ padding-top: 6vh;
     right: 5px;
 }
 
+/* rules section styling */
 #rules-section {
     background-image: url(./assets/images/pexels-shay-wood-574116.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
-    height: 100vh;
+    background-size: cover;
+    min-height: 100vh;
     width: 100vw;
 }
 
@@ -127,6 +128,16 @@ padding-top: 6vh;
     font-family: Victory;
     text-align: center;
     text-shadow: -1px -1px 0 #000, 10px -5px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: red;
+    padding: 4.5vh;
+}
+
+#rules-section p{
+    display: block;
+    padding: 0 10vw 0 10vw;
+    font-family: Comic;
+    color: yellow;
+    text-shadow: -1px -1px 0 #000, 5px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 
