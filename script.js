@@ -16,6 +16,10 @@ let gameEnd = document.querySelector("#end-section");
 let playerCard = document.querySelector(".playerCon")
 let computerCard = document.querySelector(".pcCon")
 
+// variables for scores
+let playerScoreEl = document.querySelector("#player-score");
+let computerScoreEL = document.querySelector("#computer-score");
+
 //************************* EVENT LISTENERS ***************************
 
 // start screen --> game screen
@@ -181,6 +185,25 @@ let compStat;
 let playerScore = 0;
 let computerScore = 0;
 
+// function to store scores in local storage
+function storeScores() {
+    localStorage.setItem("playerScore", JSON.stringify(playerScore));
+    localStorage.setItem("computerScore", JSON.stringify(computerScore));
+}
+storeScores();
+
+// function to display current scores on game page
+function displayScores() {
+    
+    // variables to get scores from local storage
+    let currentPlayerScore = JSON.parse(localStorage.getItem("playerScore"));
+    let currentComputerScore = JSON.parse(localStorage.getItem("computerScore"));
+    
+    playerScoreEl.textContent = (`Player Score: ${currentPlayerScore}`);
+    computerScoreEL.textContent = (`Computer Score: ${currentComputerScore}`);
+}
+displayScores();
+
 // Event listener for power buttons
 let i = 0;
 let nextRoundBtn = document.querySelector("#nextRound");
@@ -189,12 +212,11 @@ let powers = document.querySelector("#playerPowers");
 nextRoundBtn.classList.add("hide");
 
 playerCard.addEventListener("click", function () {
-    if (event.target.matches("button") && i < 10) {
+    if ((event.target.matches("button")  || event.target.matches("p")) && i < 10) {
         computerCard.classList.remove("hide");
 
-
         //variables
-        let selectedButton = event.target;
+        let selectedButton = event.target.closest("button");
         let selectedStatClass = selectedButton.classList[1];
         let computerStat = computerCard.querySelector(`.${selectedStatClass}`);
 
@@ -207,22 +229,14 @@ playerCard.addEventListener("click", function () {
         // Compares the player's and computer's selected stats
         if (playerStat > compStat) {
             playerScore += 1;
-            localStorage.setItem("playerScore", JSON.stringify(playerScore));
-            localStorage.setItem("computerScore", JSON.stringify(computerScore));
+            storeScores();
         } else if (compStat > playerStat) {
             computerScore += 1;
-            localStorage.setItem("playerScore", JSON.stringify(playerScore));
-            localStorage.setItem("computerScore", JSON.stringify(computerScore));
+            storeScores();
         }
 
-
-
-
-
-
-
-
-
+        // display current scores in the game page
+        displayScores();
 
         nextRoundBtn.classList.remove("hide");
         ++i;
@@ -270,6 +284,5 @@ function endScore() {
     // Append the h1 element to the resultText element in the HTML
     totalScores.appendChild(scoreEl);
     totalScores.appendChild(score2El)
-
 
 }

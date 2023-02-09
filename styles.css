@@ -331,6 +331,20 @@ p {
     font-size: 100%;
 }
 
+/* Styles current scores in the game screen */
+#player-score {
+    position: absolute;
+    top: 12%;
+    left: 11%;
+    font-size: 110%;
+}
+
+#computer-score {
+    position: absolute;
+    top: 12%;
+    right: 11%;
+    font-size: 110%;
+}
 .resultScreen{
     display: grid;
 }
