@@ -286,3 +286,26 @@ function endScore() {
     totalScores.appendChild(score2El)
 
 }
+
+// ********************** SCORE BOARD ********************************
+
+// variables to store player data
+let storeNames = JSON.parse(localStorage.getItem("playerNames")) || [];
+console.log(storeNames);
+let saveScores = JSON.parse(localStorage.getItem("playerScores")) || [];
+console.log(saveScores); 
+let saveBtn = document.querySelector("#save-name")
+let nameInput = document.querySelector("#player-name")
+
+saveBtn.addEventListener("click", function () {
+
+
+    storeNames.push(nameInput.value);
+    console.log(storeNames);
+    localStorage.setItem("playerNames", JSON.stringify(storeNames));
+
+    saveScores.push(playerScore);
+    localStorage.setItem("playerScores", JSON.stringify(storeScores));
+
+    console.log(localStorage);
+})
