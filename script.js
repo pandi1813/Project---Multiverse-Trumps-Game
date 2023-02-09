@@ -289,11 +289,14 @@ function endScore() {
 
 // ********************** SCORE BOARD ********************************
 
-// variables to store player data
+
+// arrays to save elements from local storage or create empty arrays if local storage is empty
 let storeNames = JSON.parse(localStorage.getItem("playerNames")) || [];
 console.log(storeNames);
 let saveScores = JSON.parse(localStorage.getItem("playerScores")) || [];
 console.log(saveScores); 
+
+//variables for dom elements
 let saveBtn = document.querySelector("#save-name")
 let nameInput = document.querySelector("#player-name")
 
@@ -301,12 +304,16 @@ let nameInput = document.querySelector("#player-name")
 // save player name 
 saveBtn.addEventListener("click", function () {
 
-
+    //when save clicked, adds player name to array
     storeNames.push(nameInput.value);
     console.log(storeNames);
+    // updates the local storage with the new array
     localStorage.setItem("playerNames", JSON.stringify(storeNames));
 
+
+    // adds the final score to the array
     saveScores.push(playerScore);
+    // updates local storage with array
     localStorage.setItem("playerScores", JSON.stringify(saveScores));
 
     console.log(localStorage);
@@ -314,13 +321,15 @@ saveBtn.addEventListener("click", function () {
 })
 
 
-// display scores
+// DISPLAY SCORES
+
 
 let highScoresDiv = document.querySelector("#highscores")
-let playerNames = JSON.parse(localStorage.getItem("playerNames")) || [];
-let playerScores = JSON.parse(localStorage.getItem("playerScores")) || [];
 
-let sortedScores = playerScores.sort();
+// let playerNames = JSON.parse(localStorage.getItem("playerNames")) || [];
+// let playerScores = JSON.parse(localStorage.getItem("playerScores")) || [];
+
+let sortedScores = saveScores.sort();
 console.log("sort: " + sortedScores)
 let reversedScores = sortedScores.reverse();
 console.log( "reverse: " + reversedScores);
@@ -328,9 +337,9 @@ console.log( "reverse: " + reversedScores);
 displayHighScores();
 function displayHighScores() {
     for (let i = 0; i < reversedScores.length; i++) {
-        let nameIndex = playerScores.indexOf(reversedScores[i]);
+        let nameIndex = saveScores.indexOf(reversedScores[i]);
         console.log(nameIndex);
-        let playerName = playerNames[nameIndex];
+        let playerName = storeNames[nameIndex];
     
         let liElement = document.createElement("li");
         liElement.textContent = playerName + ": " + reversedScores[i]
