@@ -81,6 +81,7 @@ width: 15vw;
 font-size: 5vh;
 cursor: pointer;
 padding-top: 6vh;
+/* transform: scale(1.5); */
 }
 
 
@@ -133,9 +134,13 @@ padding-top: 6vh;
     padding: 4.5vh;
 }
 
-#rules-section p{
+#rules-section ul{
+    padding: 0;
+}
+
+#rules-section li{
     display: block;
-    padding: 0 10vw 0 10vw;
+    padding: 2vh 10vw 0 10vw;
     font-family: Comic;
     color: yellow;
     text-shadow: -1px -1px 0 #000, 5px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -144,8 +149,8 @@ padding-top: 6vh;
 #rules-section button {
     background-color: #200f21;
     position: absolute;
-    right: 5%;
-    bottom: 5%;
+    right: 5px;
+    bottom: 5px;
 }
 
 /* game screen styling */
