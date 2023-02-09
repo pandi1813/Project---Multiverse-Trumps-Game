@@ -364,23 +364,39 @@ p {
     height: auto;
 }
 #nextRound{
-    border-radius: 50%;
-    width: 4%;
-    height: 5%;
-    background-color: rgb(3, 80, 3);
-    font-weight: 600;
-    font-size: 90%;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+    background-color: transparent;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    
 }
 
+#nextRound:hover {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+  }
 #finishGame{
-    border-radius: 50%;
-    width: 4%;
-    height: 5%;
-    background-color: rgb(128, 0, 0);
-    font-weight: 600;
-    font-size: 90%;
+    border: 2px solid rgb(128, 0, 0);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(128, 0, 0);
+    background-color: transparent;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
 }
-
+#finishGame:hover {
+    background-color: rgb(128, 0, 0);
+    color: white;
+    cursor: pointer;
+  }
 
 /* zoom */
 @media only screen and (max-width: 600px) {
@@ -433,7 +449,6 @@ game {
     height: 70%;
     width: 45%;
 }
-
 .card-deck {
     width: 45vh;
     min-height: fit-content;
@@ -442,13 +457,16 @@ game {
 .playerCon {
     position: absolute;
     left: 2%;
-    top: 30%;
+    top: 1%;
 }
 
+.card-title{
+
+}
 .pcCon {
     position: absolute;
-    left: 45%;
-    top: 30%;
+    left: 55%;
+    top: 1%;
 }
 #player-score {
     position: absolute;
@@ -464,13 +482,60 @@ game {
     font-size: 70%;
 }
 #nextRound{
-    border-radius: 50%;
-    width: 15%;
-    height: 10%;
-    background-color: rgb(3, 80, 3);
-    font-weight: 600;
-    font-size: 80%;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 8px;
+    font-weight: bold;
+    color: green;
+    background-color: transparent;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    top: -25%;
 }
+
+#finishGame{
+    border: 2px solid rgb(128, 0, 0);
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 8px;
+    font-weight: bold;
+    color: rgb(128, 0, 0);
+    background-color: transparent;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    top: -25%;
+}
+
+
+#gif {
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    width: 50vh;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
