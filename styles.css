@@ -1,6 +1,6 @@
 @font-face {
     font-family: Victory;
-src: url(./assets/font/victory-comics-font/VictoryComics-Mgow.otf);
+    src: url(./assets/font/victory-comics-font/VictoryComics-Mgow.otf);
 }
 
 @font-face {
@@ -19,6 +19,7 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
+    padding: 0;
 }
 
 
@@ -56,7 +57,7 @@ body {
     background-repeat: no-repeat;
     /* position: absolute; */
     bottom: 20vh;
-    
+
 }
 
 
@@ -75,19 +76,18 @@ body {
 
 
 
-#play-btn p:hover {
-height: 35vh;
-width: 15vw;
-font-size: 5vh;
-cursor: pointer;
-padding-top: 6vh;
+#play-btn:hover {
+    font-size: 5vh;
+    cursor: pointer;
+    transform: scale(1.5);
 }
 
 
 
-#play-btn p {
+#play-btn{
     display: block;
     position: absolute;
+    text-align: center;
     padding-top: 7vh;
     padding-right: 3vw;
     left: -1vw;
@@ -96,12 +96,15 @@ padding-top: 6vh;
     font-size: 4vh;
     font-family: Comic;
     color: red;
-
+    padding: 0;
+    border: none;
+    background: none;
     margin: auto;
-   
+    background-color: transparent;
     background-image: url(./assets/images/pngegg.png);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     height: 20vh;
     width: 20vw;
 
@@ -129,17 +132,20 @@ game {
     height: 100vh;
     width: 150vw;
     display: flex;
+    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     object-fit: fill;
+    margin: 0;
+    padding: 0;
 
 }
 
 .card {
     /* width: 80px; */
-    height: 40vh;
-    width: 70vw;
+    height: 380px;
+    /* width: 70vw; */
     object-fit: fill;
     background-color: rgb(0, 0, 0);
     display: flex;
@@ -345,33 +351,127 @@ p {
     right: 11%;
     font-size: 110%;
 }
-.resultScreen{
+
+.resultScreen {
     display: grid;
 }
 
-#gif{
+#gif {
     position: absolute;
     left: 5%;
     top: 15%;
-    width: 600px;
+    width: 50vh;
     height: auto;
 }
-/* 
-#endText h1{
-    position: absolute;
-    right: 15%;
+#nextRound{
+    border-radius: 50%;
+    width: 4%;
+    height: 5%;
+    background-color: rgb(3, 80, 3);
+    font-weight: 600;
+    font-size: 90%;
 }
 
-#player-score h1{
-    position: relative;
-    margin: 5px;
-    right: 24%;
-    top: 20%;
+#finishGame{
+    border-radius: 50%;
+    width: 4%;
+    height: 5%;
+    background-color: rgb(128, 0, 0);
+    font-weight: 600;
+    font-size: 90%;
 }
 
-#computer-score h1{
-    position: relative;
-    margin: 5px;
-    right: 20%;
-    top: 30%;
+
+/* zoom */
+@media only screen and (max-width: 600px) {
+    /* start screen section */
+    #start-section p {
+        font-size: 2vw;
+    }
+    #start-section h1 {
+        font-size: 3vw;
+    }
+    #rule-btn {
+        bottom: 5px;
+    right: 5px;
+    font-size: 5px;
+}
+
+
+
+}
+
+/* mobile */
+@media only screen and (max-width: 300px) {
+    /* start screen section */
+#start-section p {
+    font-size: 3vw;
+}
+#play-btn {
+  font-size: 50%;
+  }
+
+#rule-btn {
+    bottom: 5px;
+    right: 5px;
+    font-size: 10px;
+}
+/* .container{
+
 } */
+
+game {
+    background-position: center;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+
+.card {
+    margin: 2px;
+    outline-width: 3px;
+    height: 70%;
+    width: 45%;
+}
+
+.card-deck {
+    width: 45vh;
+    min-height: fit-content;
+}
+
+.playerCon {
+    position: absolute;
+    left: 2%;
+    top: 30%;
+}
+
+.pcCon {
+    position: absolute;
+    left: 45%;
+    top: 30%;
+}
+#player-score {
+    position: absolute;
+    top: 12%;
+    left: 11%;
+    font-size: 70%;
+}
+
+#computer-score {
+    position: absolute;
+    top: 12%;
+    right: 11%;
+    font-size: 70%;
+}
+#nextRound{
+    border-radius: 50%;
+    width: 15%;
+    height: 10%;
+    background-color: rgb(3, 80, 3);
+    font-weight: 600;
+    font-size: 80%;
+}
+
+
+
+}
