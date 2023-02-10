@@ -149,7 +149,7 @@ body {
 
 /* game screen styling */
 game {
-    background: url(./assets/22033.jpg);
+    background: url(./assets/images/22033.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -652,25 +652,6 @@ p {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
 
 
 
