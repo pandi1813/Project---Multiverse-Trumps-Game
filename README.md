@@ -1,69 +1,42 @@
-# Project1
+# Superhero Trump Game  
 
-// Top Trumps game with superhero and gfycat api-s
-// create wireframe
-// create a start screen
-//      title + img
-    //  start button that loads game
-    //  rules
-// display 1 random card for the player & create DOM elements for each stat them
-        // name
-        // img 
-        // a least 3 powers 
-        // add basic style - can be bootstrap card
-    // select a power --- can be buttons
-            // on click save selection in a variable that can be compared
-    
-             // generate random card for computer 
-                // hook into the same stat as the player
-               
-// compare stat of the 2 cards
+## Description  
+Welcome! This project features a Trump card game, in which players battle against the computer with superheros and villains!
 
+In this game, the player and computer contest against each other using a selected power from their heroes card. The player with higher power wins the game! 
 
-    //hide computer card  
+This application was made with Bootstrap library, a superheroes API, and the gfycat API.
 
-    add event listener to power buttons
-     
+## Prerequisites  
+A web browser is required to access the application.
 
-     identify the buttons 
-     match the number with computer stat can select class
-        store them in variables ?
+## Usage
 
+### Application link
+The application can be accessed using this URL: https://pandi1813.github.io/Project1/
 
+### Application usage
 
-    // if (playerStat > compStat) {
-        // add 1 point to player
-    // } else if (compStat > playerStat)
-        // +1 computer score
-    // else no points
+#### Start screen
+![The game start screen](./assets/images/start-screen.png)  
+On the start screen, players can click on the **PLAY** button to start the game, or **RULES** button to see the game rules.
 
-    display comp card
+#### Rules screen
+![The rules screen](./assets/images/rules-screen.png)  
+In the rules screen, players can learn how to play the game.
 
+#### Game screen
+![The in-game screen](./assets/images/game-screen.png)  
+- There are 10 rounds in the game
+- To proceed with a game round, the player shall select a power from his/her hero card
+- Once a power is selected, the computer's card will be revealed and the scores are calculated
+- To proceed to the next round, the player can click on the **NEXT** button
+- After the final round, the player can click on the **FINISH** button to complete the game
 
+#### End screen
+![The end screen](./assets/images/end-screen.png)  
+At the end screen, players can see the game results and score. They will also be presented with a reaction gif based on the game results.
 
-
-//   ===========> save points in variables
-
-
-
-
-
-
-// next round button (?)
-
-
-
-
-
-// select a new card and play again
-        //display card could be a function and we can call it again when we go to next round (?)
-// limit the number of rounds
-        // can we base the game in a for loop?
-// compare final points and decide who wins
-    //display random gif for win/lose
-    
-    
-    // EXTRAS
-// input for player name and save score to score board
-// make the cards pretty
-// offer multiple cards to the player and let them select one
+## Acknowledgments
+- [Superheroes API](https://akabab.github.io/superhero-api/)
+- [Gfycat API](https://developers.gfycat.com/api/)
