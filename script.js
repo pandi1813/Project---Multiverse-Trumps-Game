@@ -238,7 +238,7 @@ playerCard.addEventListener("click", function () {
 
         // display current scores in the game page
         displayScores();
-
+        // shows next button and adding one round to the count
         nextRoundBtn.classList.remove("hide");
         ++i;
         powers.querySelectorAll("button").forEach(button => {
@@ -253,13 +253,14 @@ playerCard.addEventListener("click", function () {
         powers.querySelectorAll("button").forEach(button => {
             button.removeAttribute("disabled");
         });
-        if (i === 2) {
+        if (i === 10) {
             finishBtn.classList.remove("hide");
             playerCard.classList.add("hide");
         }
     });
-
+    // finish button removes game screen and displays end screen also start gif generator
     finishBtn.addEventListener("click", function () {
+        // this if makes sure i get just one result at the end 
         if (!isScoreDisplayed) {
         gameEnd.classList.remove("hide");
         gameScreen.classList.add("hide");  
@@ -269,7 +270,7 @@ playerCard.addEventListener("click", function () {
         }
     });
 });
-
+    // displays end score to see at the end 
 function endScore() {
     let totalScores = document.querySelector("#resultText");
     let scoreEl = document.createElement("h1");
