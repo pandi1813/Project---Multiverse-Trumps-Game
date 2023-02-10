@@ -50,7 +50,7 @@ returnBtn.addEventListener("click", function () {
 // Declare arrays to store different game results and messages
 let gameResultLose = ["youlose", "looser", "sad", "tryme"];
 let gameResultWin = ["winning", "victory", "cheers"];
-let gameResultTie = [, "muhaha", "ha", "haha", "goodluck", "really"];
+let gameResultTie = ["ha", "haha", "goodluck", "really"];
 let gameResult = "";
 
 
