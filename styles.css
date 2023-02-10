@@ -195,10 +195,6 @@ p {
     justify-content: center;
 }
 
-.resultGif {
-    height: auto;
-    width: 300px;
-}
 
 .card-img-top {
     object-fit: fill;
@@ -220,7 +216,7 @@ p {
     right: 5%;
     top: -100%;
     font-size: 10px;
-
+    
 }
 
 .card-body h2 {
@@ -231,7 +227,7 @@ p {
     text-align: center;
     right: 5%;
     top: -20%;
-
+    
 }
 
 
@@ -392,6 +388,7 @@ p {
 #resultGif h1{
     padding: 10px;
     margin: 10px;
+    position: relative;
 }
 
 #nextRound {
@@ -512,7 +509,7 @@ p {
 }
 
 /* mobile */
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 500px) {
 
     /* start screen section */
     #start-section p {
@@ -528,6 +525,11 @@ p {
         right: 5px;
         font-size: 10px;
     }
+    #return-btn{
+        bottom: 5px;
+        right: 5px;
+        font-size: 10px;
+    }
 
     game {
         background-position: center;
@@ -537,21 +539,26 @@ p {
 
 
     .card {
-        width: 40%;
-        height: 70px padding 10px;
+        width: 60%;
+        height: 100px padding 10px;
         outline-width: 3px;
     }
 
     .playerCon {
         position: absolute;
-        left: -10%;
-        top: 1%;
+        left: 0;
+        top: 15%;
+    }
+    .pcCon {
+        position: absolute;
+        left: 60%;
+        top: 15%;
     }
 
     .card-body {
         display: flex;
         flex-wrap: wrap;
-        width: 60px;
+        width: 85px;
         height: 60px;
         position: absolute;
         top: 60%;
@@ -564,7 +571,6 @@ p {
         font-size: 0.5ch;
         margin-bottom: 0 !important;
         font-weight: bold;
-
     }
 
     .int,
@@ -585,12 +591,6 @@ p {
     .card-body a {
         font-size: 30%;
         text-shadow: none
-    }
-
-    .pcCon {
-        position: absolute;
-        left: 40%;
-        top: 1%;
     }
 
     #player-score {
@@ -618,7 +618,7 @@ p {
         text-transform: uppercase;
         transition: all 0.2s ease-in-out;
         position: relative;
-        top: -25%;
+        top: -20%;
     }
 
     #finishGame {
@@ -635,19 +635,42 @@ p {
         top: -25%;
     }
 
-
     #gif {
         position: absolute;
-        left: 26%;
+        left: 30%;
         top: 1%;
-        width: 35vh;
+        width: 40vh;
         height: auto;
         outline-style: groove;
+    }
+
+    #resultScreen h1{
+        position: relative;
+        z-index: 1;
     }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 
