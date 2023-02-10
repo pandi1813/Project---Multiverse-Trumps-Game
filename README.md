@@ -13,7 +13,7 @@ A web browser is required to access the application.
 ## Usage
 
 ### Application link
-The application can be accessed using this URL: https://pandi1813.github.io/Project1/
+The application can be accessed using this URL: https://pandi1813.github.io/Project---Multiverse-Trumps-Game/
 
 ### Application usage
 
