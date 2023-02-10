@@ -109,6 +109,44 @@ body {
     right: 5px;
 }
 
+/* rules section styling */
+#rules-section {
+    background-image: url(./assets/images/pexels-shay-wood-574116.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+#rules-section h2{
+    font-family: Victory;
+    text-align: center;
+    text-shadow: -1px -1px 0 #000, 10px -5px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: red;
+    padding: 4.5vh;
+}
+
+#rules-section ul{
+    padding: 0;
+}
+
+#rules-section li{
+    display: block;
+    padding: 2vh 10vw 0 10vw;
+    font-family: Comic;
+    color: yellow;
+    text-shadow: -1px -1px 0 #000, 5px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#rules-section button {
+    background-color: #200f21;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
 /* game screen styling */
 game {
     background: url(./assets/22033.jpg);
@@ -157,10 +195,6 @@ p {
     justify-content: center;
 }
 
-.resultGif {
-    height: auto;
-    width: 300px;
-}
 
 .card-img-top {
     object-fit: fill;
@@ -182,7 +216,7 @@ p {
     right: 5%;
     top: -100%;
     font-size: 10px;
-
+    
 }
 
 .card-body h2 {
@@ -193,7 +227,7 @@ p {
     text-align: center;
     right: 5%;
     top: -20%;
-
+    
 }
 
 
@@ -354,6 +388,7 @@ p {
 #resultGif h1{
     padding: 10px;
     margin: 10px;
+    position: relative;
 }
 
 #nextRound {
@@ -474,7 +509,7 @@ p {
 }
 
 /* mobile */
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 500px) {
 
     /* start screen section */
     #start-section p {
@@ -490,6 +525,11 @@ p {
         right: 5px;
         font-size: 10px;
     }
+    #return-btn{
+        bottom: 5px;
+        right: 5px;
+        font-size: 10px;
+    }
 
     game {
         background-position: center;
@@ -499,21 +539,26 @@ p {
 
 
     .card {
-        width: 40%;
-        height: 70px padding 10px;
+        width: 60%;
+        height: 100px padding 10px;
         outline-width: 3px;
     }
 
     .playerCon {
         position: absolute;
-        left: -10%;
-        top: 1%;
+        left: 0;
+        top: 15%;
+    }
+    .pcCon {
+        position: absolute;
+        left: 60%;
+        top: 15%;
     }
 
     .card-body {
         display: flex;
         flex-wrap: wrap;
-        width: 60px;
+        width: 85px;
         height: 60px;
         position: absolute;
         top: 60%;
@@ -526,7 +571,6 @@ p {
         font-size: 0.5ch;
         margin-bottom: 0 !important;
         font-weight: bold;
-
     }
 
     .int,
@@ -547,12 +591,6 @@ p {
     .card-body a {
         font-size: 30%;
         text-shadow: none
-    }
-
-    .pcCon {
-        position: absolute;
-        left: 40%;
-        top: 1%;
     }
 
     #player-score {
@@ -580,7 +618,7 @@ p {
         text-transform: uppercase;
         transition: all 0.2s ease-in-out;
         position: relative;
-        top: -25%;
+        top: -20%;
     }
 
     #finishGame {
@@ -597,14 +635,18 @@ p {
         top: -25%;
     }
 
-
     #gif {
         position: absolute;
-        left: 26%;
+        left: 30%;
         top: 1%;
-        width: 35vh;
+        width: 40vh;
         height: auto;
         outline-style: groove;
+    }
+
+    #resultScreen h1{
+        position: relative;
+        z-index: 1;
     }
 
 
