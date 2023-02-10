@@ -1,3 +1,4 @@
+/* custom fonts */
 @font-face {
     font-family: Victory;
     src: url(./assets/font/victory-comics-font/VictoryComics-Mgow.otf);
@@ -14,6 +15,7 @@
     src: url(./assets/font/WaveWarriorItalic-51P6V.otf);
 }
 
+/* styles the document's body */
 body {
     display: flex;
     align-items: center;
@@ -57,9 +59,7 @@ body {
     background-repeat: no-repeat;
     /* position: absolute; */
     bottom: 20vh;
-
 }
-
 
 #start-section p {
     display: block;
@@ -99,7 +99,6 @@ body {
     background-position: center;
     height: 20vh;
     width: 20vw;
-
 }
 
 #rule-btn {
@@ -166,7 +165,6 @@ game {
     object-fit: fill;
     margin: 0;
     padding: 0;
-
 }
 
 .card {
@@ -216,7 +214,6 @@ p {
     right: 5%;
     top: -100%;
     font-size: 10px;
-    
 }
 
 .card-body h2 {
@@ -227,7 +224,6 @@ p {
     text-align: center;
     right: 5%;
     top: -20%;
-    
 }
 
 
@@ -242,8 +238,6 @@ p {
     display: flex;
     justify-content: center;
     min-height: fit-content;
-
-
 }
 
 .container {
@@ -305,8 +299,6 @@ p {
     background: rgb(0, 0, 0);
     color: white;
 }
-
-
 
 .int {
     background-color: yellow;
@@ -401,7 +393,6 @@ p {
     background-color: transparent;
     text-transform: uppercase;
     transition: all 0.2s ease-in-out;
-
 }
 
 #nextRound:hover {
@@ -549,6 +540,7 @@ p {
         left: 0;
         top: 15%;
     }
+
     .pcCon {
         position: absolute;
         left: 60%;
@@ -648,26 +640,5 @@ p {
         position: relative;
         z-index: 1;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
