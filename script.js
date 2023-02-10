@@ -50,7 +50,7 @@ returnBtn.addEventListener("click", function () {
 // Declare arrays to store different game results and messages
 let gameResultLose = ["youlose", "looser", "sad", "tryme"];
 let gameResultWin = ["winning", "victory", "cheers"];
-let gameResultTie = [, "muhaha", "ha", "haha", "goodluck", "really"];
+let gameResultTie = ["ha", "haha", "goodluck", "really"];
 let gameResult = "";
 
 
@@ -194,11 +194,11 @@ storeScores();
 
 // function to display current scores on game page
 function displayScores() {
-    
+
     // variables to get scores from local storage
     let currentPlayerScore = JSON.parse(localStorage.getItem("playerScore"));
     let currentComputerScore = JSON.parse(localStorage.getItem("computerScore"));
-    
+
     playerScoreEl.textContent = (`Player Score: ${currentPlayerScore}`);
     computerScoreEL.textContent = (`Computer Score: ${currentComputerScore}`);
 }
@@ -210,6 +210,7 @@ let nextRoundBtn = document.querySelector("#nextRound");
 let finishBtn = document.querySelector("#finishGame");
 let powers = document.querySelector("#playerPowers");
 nextRoundBtn.classList.add("hide");
+let isScoreDisplayed = false;
 
 playerCard.addEventListener("click", function () {
     if ((event.target.matches("button")  || event.target.matches("p")) && i < 10) {
@@ -237,26 +238,14 @@ playerCard.addEventListener("click", function () {
 
         // display current scores in the game page
         displayScores();
-
+        // shows next button and adding one round to the count
         nextRoundBtn.classList.remove("hide");
         ++i;
         powers.querySelectorAll("button").forEach(button => {
             button.setAttribute("disabled", "true");
         });
     }
-    else if (i >= 10) {
-        finishBtn.classList.remove("hide");
-        finishBtn.addEventListener("click", function (){
-            gameEnd.classList.remove("hide");
-            gameScreen.classList.add("hide");
-            computerCard.classList.add("hide");
-            playerCard.classList.add("hide");
-            endScore()
-            winOrLose()
 
-        }
-
-)}
     nextRoundBtn.addEventListener("click", function () {
         getStats();
         computerCard.classList.add("hide");
@@ -264,14 +253,24 @@ playerCard.addEventListener("click", function () {
         powers.querySelectorAll("button").forEach(button => {
             button.removeAttribute("disabled");
         });
+        if (i === 10) {
+            finishBtn.classList.remove("hide");
+            playerCard.classList.add("hide");
+        }
+    });
+    // finish button removes game screen and displays end screen also start gif generator
+    finishBtn.addEventListener("click", function () {
+        // this if makes sure i get just one result at the end 
+        if (!isScoreDisplayed) {
+        gameEnd.classList.remove("hide");
+        gameScreen.classList.add("hide");  
+        winOrLose();
+        endScore();
+        isScoreDisplayed = true;
+        }
     });
 });
-
-
-
-
-
-
+    // displays end score to see at the end 
 function endScore() {
     let totalScores = document.querySelector("#resultText");
     let scoreEl = document.createElement("h1");
