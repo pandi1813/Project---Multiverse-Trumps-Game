@@ -14,7 +14,7 @@
     src: url(./assets/font/WaveWarriorItalic-51P6V.otf);
 }
 
-body {
+main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -369,27 +369,40 @@ p {
     font-size: 110%;
 }
 
-.resultScreen {
+/* #end-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+} */
+
+#resultGif{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 20px ;
+    align-items: center;
+    
 }
 
 #gif {
-    position: absolute;
-    left: 5%;
+    /* position: absolute; */
+    /* left: 5%;
     top: 15%;
-    width: 70vh;
-    height: auto;
-    object-fit: cover;
+    height: 20%;
+    object-fit: cover; */
+    flex: 0 0 30%;
+    width: 180%;
 }
 
-#resultGif h1{
+
+#resultGifText h1{
     padding: 10px;
     margin: 10px;
-    position: relative;
+    /* position: relative; */
+    flex: 0 0 50%;
 }
+
 
 #nextRound {
     border: 2px solid green;
@@ -539,8 +552,9 @@ p {
 
 
     .card {
-        width: 60%;
-        height: 100px padding 10px;
+        height: 100vh;
+        width: auto;
+        padding: 5px;
         outline-width: 3px;
     }
 
@@ -634,20 +648,11 @@ p {
         position: relative;
         top: -25%;
     }
-
+    
+    
     #gif {
-        position: absolute;
-        left: 30%;
-        top: 1%;
-        width: 40vh;
-        height: auto;
-        outline-style: groove;
-    }
-
-    #resultScreen h1{
-        position: relative;
-        z-index: 1;
-    }
+    width: 80%;
+    } 
 
 
 
