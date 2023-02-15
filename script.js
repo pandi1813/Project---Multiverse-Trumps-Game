@@ -172,8 +172,6 @@ function displayCards(playerHero, computerHero) {
     document.getElementById('pcPowerValue').innerHTML = computerHero.powerStat;
     document.getElementById('pcCombatValue').innerHTML = computerHero.combatStat;
 
-
-
 }
 
 
@@ -258,6 +256,7 @@ playerCard.addEventListener("click", function () {
             playerCard.classList.add("hide");
         }
     });
+
     // finish button removes game screen and displays end screen also start gif generator
     finishBtn.addEventListener("click", function () {
         // this if makes sure i get just one result at the end 
@@ -270,7 +269,8 @@ playerCard.addEventListener("click", function () {
         }
     });
 });
-    // displays end score to see at the end 
+
+// displays end score to see at the end 
 function endScore() {
     let totalScores = document.querySelector("#resultGifText");
     let scoreEl = document.createElement("h1");
@@ -283,5 +283,4 @@ function endScore() {
     // Append the h1 element to the resultText element in the HTML
     totalScores.appendChild(scoreEl);
     totalScores.appendChild(score2El)
-
 }
