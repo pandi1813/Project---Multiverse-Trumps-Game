@@ -80,7 +80,7 @@ function winOrLose() {
     textEl.textContent = text;
     textEl.classList.add("endText");
     // Append the h1 element to the resultText element in the HTML
-    document.querySelector("#resultText").appendChild(textEl);
+    document.querySelector("#resultGifText").appendChild(textEl);
 
     // Call the getGif function with the gameResult variable as an argument
     getGif(gameResult);
@@ -272,7 +272,7 @@ playerCard.addEventListener("click", function () {
 
 // displays end score to see at the end 
 function endScore() {
-    let totalScores = document.querySelector("#resultText");
+    let totalScores = document.querySelector("#resultGifText");
     let scoreEl = document.createElement("h1");
     let score2El = document.createElement("h1");
     scoreEl.textContent = "Your score is: " + playerScore;
